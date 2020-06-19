@@ -7,16 +7,16 @@
 objects = out/vector.o out/body.o out/tree.o
 
 main: $(objects) library/main.cpp
-	gcc -o main $(objects)
+	g++ -o main -Iinclude $(objects) library/main.cpp
 
 out/vector.o: library/vector.cpp include/vector.h
-	gcc -c -Iinclude library/vector.cpp
+	g++ -c -Iinclude library/vector.cpp -o out/vector.o
 
 out/body.o: library/body.cpp include/body.h
-	gcc -c -Iinclude library/body.cpp
+	g++ -c -Iinclude library/body.cpp -o out/body.o
 
 out/tree.o: library/tree.cpp include/tree.h
-	gcc -c -Iinclude library/tree.cpp
+	g++ -c -Iinclude library/tree.cpp -o out/tree.o
 
 # out/main.o: library/main.cpp out/vector.o out/body.o out/tree.o
 # 	gcc -c -Iinclude library/main.cpp
