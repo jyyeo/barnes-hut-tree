@@ -19,7 +19,7 @@ using std::stringstream;
 int main(int argc, char const *argv[]) {
 	// read bodies from txt file
 	ifstream file;
-	file.open("test1.txt");
+	file.open(argv[1]);
 	string line;
 	getline(file, line);
 	int n;
