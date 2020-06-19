@@ -44,16 +44,38 @@ int main(int argc, char const *argv[]) {
 	file.close();
 
 	// create barnes-hut tree
-	printf("%f\n", min_x(bodies, n));
-	vector_t bl = {min_x(bodies, n), min_y(bodies, n)};
-	vector_t tr = {max_x(bodies, n), max_y(bodies, n)};
-	Tree *tree;
-	tree = new Tree;
-	initialize_tree(tree, 0.0, bl, tr);
+	// vector_t bl = {min_x(bodies, n), min_y(bodies, n)};
+	// vector_t tr = {max_x(bodies, n), max_y(bodies, n)};
+	printf("max x: %f\n", max_x(bodies, n));
+	// printf("max y: %f\n", max_y(bodies, n));
+	// printf("min x: %f\n", min_x(bodies, n));
+	// printf("min y: %f\n", min_y(bodies, n));
 
-	print_tree(*tree);
-	Tree *NW;
-	NW = tree->NW;
-	print_tree(*NW);
+	// Tree *tree;
+	// tree = new Tree;
+	// initialize_tree(tree, 0.0, bl, tr);
+	// printf("root:\n");
+	// print_tree(*tree);
+
+	// Tree *NW;
+	// NW = tree->NW;
+	// printf("NW:\n");
+	// print_tree(*NW);
+
+	// Tree *NE;
+	// NE = tree->NE;
+	// printf("NE:\n");
+	// print_tree(*NE);
+
+	// Tree *SW;
+	// SW = tree->SW;
+	// printf("SW\n");
+	// print_tree(*SW);
+
+	// Tree *SE;
+	// SE = tree->SE;
+	// printf("SE:\n");
+	// print_tree(*SE);
+
 	return 0;
 }
