@@ -44,38 +44,22 @@ int main(int argc, char const *argv[]) {
 	file.close();
 
 	// create barnes-hut tree
-	// vector_t bl = {min_x(bodies, n), min_y(bodies, n)};
-	// vector_t tr = {max_x(bodies, n), max_y(bodies, n)};
-	printf("max x: %f\n", max_x(bodies, n));
-	// printf("max y: %f\n", max_y(bodies, n));
-	// printf("min x: %f\n", min_x(bodies, n));
-	// printf("min y: %f\n", min_y(bodies, n));
+	vector_t bl = {min_x(bodies, n), min_y(bodies, n)};
+	vector_t tr = {max_x(bodies, n), max_y(bodies, n)};
 
-	// Tree *tree;
-	// tree = new Tree;
-	// initialize_tree(tree, 0.0, bl, tr);
-	// printf("root:\n");
-	// print_tree(*tree);
+	Tree *tree;
+	tree = new Tree;
+	initialize_tree(tree, bl, tr);
 
-	// Tree *NW;
-	// NW = tree->NW;
-	// printf("NW:\n");
-	// print_tree(*NW);
+	// insert bodies
+	for (int i = 0; i < n; i++) {
+		// printf("inserting body %d...\n", i);
+		insert_body(tree, bodies[i]);
+		// print_entire_tree(tree);
+	}
 
-	// Tree *NE;
-	// NE = tree->NE;
-	// printf("NE:\n");
-	// print_tree(*NE);
-
-	// Tree *SW;
-	// SW = tree->SW;
-	// printf("SW\n");
-	// print_tree(*SW);
-
-	// Tree *SE;
-	// SE = tree->SE;
-	// printf("SE:\n");
-	// print_tree(*SE);
+	// print tree
+	print_entire_tree(tree);
 
 	return 0;
 }

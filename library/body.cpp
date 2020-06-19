@@ -1,7 +1,8 @@
+#include <stdlib.h>
+#include <cstdio>
+
 #include "vector.h"
 #include "body.h"
-
-#include <cstdio>
 
 float get_mass (Body b) {
 	return b.mass;
@@ -25,9 +26,7 @@ float sum_mass (Body bodies[], int n) {
 
 float max_x (Body bodies[], int n) {
 	float max_x = get_position(bodies[0]).x;
-	printf("%f\n", max_x);
 	for (int i = 1; i < n; i++) {
-		printf("%f\n", get_position(bodies[i]).x);
 		if (max_x < get_position(bodies[i]).x) {
 			max_x = get_position(bodies[i]).x;
 		}
